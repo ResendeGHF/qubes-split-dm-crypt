@@ -57,7 +57,8 @@ launch_disp() {
         message "launching $disp"
 
         if qvm-create --class DispVM --template "$template" --label "$label" \
-                      --prop netvm= --prop auto_cleanup=True "$disp"; then
+                      --prop netvm= --prop default_dispvm= \
+                      --prop auto_cleanup=True "$disp"; then
             qvm-start "$disp"
             echo "$disp"
             return 0
