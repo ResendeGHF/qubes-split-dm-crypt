@@ -176,7 +176,7 @@ open() {
 
 find_dm_dev() {
     qvm-block list "$1" |
-    grep -m 1 -E "^$1:dm-[0-9]+ +split-dm-crypt( |$)" |
+    grep -m 1 -E "^$1:dm-[0-9]+ (.* )?split-dm-crypt( |$)" |
     cut -f 1 -d " "
 }
 
